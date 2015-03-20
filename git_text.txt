@@ -7,3 +7,4 @@ back master
 new branch1
 >>>>>>> branch1
 save the conflict
+add dev

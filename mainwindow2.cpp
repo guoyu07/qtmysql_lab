@@ -6,6 +6,8 @@
 #include <QDebug>
 #include <QSqlDatabase>
 #include <QSqlRecord>
+#include <QFile>
+#include <QTextStream>
 
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent),
@@ -37,8 +39,16 @@ void MainWindow2::showData()
     model->select();
     tableView->setModel(model);
     QSqlQuery query ;
-    query.exec("select * from answers");
+    query.exec("select * from answers where status = 'pending'");
     //跳到第一条记录
     query.next();
     qDebug()<<query.record().value("code").toString();
+    //将代码取出保存
+    QFile file("E:/qt_test/corelab/code/code.c");
+    if(file.open(QIODevice::ReadWrite))
+    {
+        QTextStream out(&file);
+        out<<query.record().value("code").toString();
+    }
+
 }

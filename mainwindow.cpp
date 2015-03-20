@@ -90,7 +90,6 @@ void MainWindow::connect_db()
     disconnect(conBtn,SIGNAL(clicked()),this,SLOT(connect_db()));
     connect(conBtn,SIGNAL(clicked()),this,SLOT(connect_quit()));
     //连接成功后显示w2
-    w2.setDatabase(database);
     w2.show();
     w2.setWindowTitle(dbNameInput->text());
 }

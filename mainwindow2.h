@@ -19,10 +19,8 @@ public:
 
 private:
     Ui::MainWindow2 *ui;
-    QSqlDatabase database ;
-    QPushButton *showBtn ;
+    QPushButton *showBtn ;//展示
     QTableView *tableView ;
-
 private slots:
     void showData();
 public:

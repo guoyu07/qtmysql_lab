@@ -19,12 +19,16 @@ public:
 
 private:
     Ui::MainWindow2 *ui;
-    QPushButton *showBtn ;//展示
-    QTableView *tableView ;
+    QPushButton *showBtn ;//展示数据
+    QPushButton *compileBtn ;//编译按钮
+    QPushButton *outputBtn ;//获取输出按钮
+    QPushButton *judgeBtn ;//评判按钮
+    QTableView *tableView ;//数据框
+
 private slots:
     void showData();
-public:
-    void setDatabase(QSqlDatabase);
+    void compile();
+    void output();
 };
 
 #endif // MAINWINDOW2_H
